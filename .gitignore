@@ -1,4 +1,13 @@
+# Linux
+*~
+
+# Vim
+.*.swp
+
+# Ruby on Rails 3.0
 .bundle
 db/*.sqlite3
 log/*.log
 tmp/**/*
+config/*.yml
+db/seed_data/*.csv
