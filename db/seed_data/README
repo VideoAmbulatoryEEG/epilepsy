@@ -1,0 +1,5 @@
+db/seed_data/ directory is for storing seed data files for populating the database.
+
+The contents of the directory are ignored from github and will stay local to the developer.
+
+
