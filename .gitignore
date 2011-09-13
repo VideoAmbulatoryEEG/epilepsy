@@ -9,5 +9,5 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
-config/*.yml
+config/database.yml
 db/seed_data/*.csv
