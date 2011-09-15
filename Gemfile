@@ -7,6 +7,10 @@ gem 'rails', '3.0.3'
 
 gem 'mysql2'
 
+# rake gem added to counter Rake::DSL - uninitialized constant
+gem 'rake','0.8.7'
+
+ 
 # Use unicorn as the web server
 # gem 'unicorn'
 

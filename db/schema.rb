@@ -10,6 +10,60 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20110915023050) do
+
+  create_table "appointments", :force => true do |t|
+    t.integer  "patients_id"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.boolean  "isCancelled"
+    t.integer  "schedular_id"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "eeg_labs", :force => true do |t|
+    t.string   "identifier"
+    t.integer  "hospitals_id"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hospitals", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.integer  "zip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "patients", :force => true do |t|
+    t.integer  "mrn"
+    t.string   "first_name"
+    t.string   "middle_initial"
+    t.string   "last_name"
+    t.date     "birth_date"
+    t.string   "gender"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "visited_at"
+    t.datetime "searched_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "user_name"
+    t.string   "password"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "user_roles_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "last_login_at"
+  end
 
 end
