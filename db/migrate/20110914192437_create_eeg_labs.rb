@@ -2,8 +2,9 @@ class CreateEegLabs < ActiveRecord::Migration
   def self.up
     create_table :eeg_labs do |t|
       t.string :identifier
-      t.integer :hospitals_id
       t.string :location
+
+      t.references :hospital
 
       t.timestamps
     end

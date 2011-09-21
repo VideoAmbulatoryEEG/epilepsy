@@ -13,35 +13,35 @@
 ActiveRecord::Schema.define(:version => 20110921041336) do
 
   create_table "appointments", :force => true do |t|
-    t.integer  "patients_id"
     t.datetime "start_datetime"
     t.datetime "end_datetime"
     t.boolean  "isCancelled"
-    t.integer  "schedular_id"
     t.text     "comments"
+    t.integer  "patient_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "eeg_labs", :force => true do |t|
     t.string   "identifier"
-    t.integer  "hospitals_id"
     t.string   "location"
+    t.integer  "hospital_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "eeg_tests", :force => true do |t|
-    t.integer  "patients_id"
-    t.integer  "eeg_labs_id"
     t.datetime "start_datetime"
     t.datetime "end_datetime"
-    t.integer  "technicians_id"
     t.string   "clinical_history"
     t.string   "medications"
     t.string   "comments"
     t.boolean  "is_report_generated"
     t.string   "referring_physician"
+    t.integer  "patient_id"
+    t.integer  "user_id"
+    t.integer  "eeg_lab_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -85,17 +85,12 @@ ActiveRecord::Schema.define(:version => 20110921041336) do
     t.datetime "searched_at"
   end
 
-  create_table "user_roles", :force => true do |t|
-    t.string   "role"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password"
     t.string   "full_name"
     t.string   "email"
+    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

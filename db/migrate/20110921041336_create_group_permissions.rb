@@ -4,7 +4,8 @@ class CreateGroupPermissions < ActiveRecord::Migration
       t.string :name # e.g. edit_patient
       t.string :action # create, read, edit, delete
       t.string :model # patient, user, group
-      t.integer :group_id      
+      
+      t.references :group      
       t.timestamps
     end
   end
