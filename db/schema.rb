@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110915030152) do
+ActiveRecord::Schema.define(:version => 20110916052446) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "patients_id"
@@ -27,6 +27,21 @@ ActiveRecord::Schema.define(:version => 20110915030152) do
     t.string   "identifier"
     t.integer  "hospitals_id"
     t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "eeg_tests", :force => true do |t|
+    t.integer  "patients_id"
+    t.integer  "eeg_labs_id"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.integer  "technicians_id"
+    t.string   "clinical_history"
+    t.string   "medications"
+    t.string   "comments"
+    t.boolean  "is_report_generated"
+    t.string   "referring_physician"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -62,14 +77,12 @@ ActiveRecord::Schema.define(:version => 20110915030152) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "user_name"
+    t.string   "username"
     t.string   "password"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "user_roles_id"
+    t.string   "full_name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "last_login_at"
   end
 
 end

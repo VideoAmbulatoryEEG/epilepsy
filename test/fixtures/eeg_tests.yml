@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  patients_id: 1
+  eeg_labs_id: 1
+  start_datetime: 2011-09-15 20:46:48
+  end_datetime: 2011-09-15 20:46:48
+  technicians_id: 1
+  clinical_history: MyString
+  medications: MyString
+  comments: MyString
+  is_report_generated: false
+  referring_physician: MyString
+
+two:
+  patients_id: 1
+  eeg_labs_id: 1
+  start_datetime: 2011-09-15 20:46:48
+  end_datetime: 2011-09-15 20:46:48
+  technicians_id: 1
+  clinical_history: MyString
+  medications: MyString
+  comments: MyString
+  is_report_generated: false
+  referring_physician: MyString
