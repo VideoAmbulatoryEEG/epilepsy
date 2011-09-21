@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110916052446) do
+ActiveRecord::Schema.define(:version => 20110921041336) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "patients_id"
@@ -42,6 +42,21 @@ ActiveRecord::Schema.define(:version => 20110916052446) do
     t.string   "comments"
     t.boolean  "is_report_generated"
     t.string   "referring_physician"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "group_permissions", :force => true do |t|
+    t.string   "name"
+    t.string   "action"
+    t.string   "model"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
